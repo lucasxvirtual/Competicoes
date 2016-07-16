@@ -1,27 +1,51 @@
-# Competicoes
-
 <html>
 	<head>
 		<title>Cadastro</title>
+		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 	</head>
 	<body>
 		<script src="cadastro.js"></script>
 		<form>
 			Nome:<br>
-			<input type="text" id="idNome" name="nome"><br>
-			Sobrenome:<br>
-			<input type="text" id="idSobrenome" name="sobrenome"><br>
-			Sexo:    
-			<input type="radio" name="gender" value="macho"> M
+			<input type="text" id="idNome" name="nome" required="required" size="50"><br>
+
+			Apelido:
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+			Nascimento:
+			&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+			Sexo:<br>
+			<input type="text" id="idApelido" name="apelido" required="required">
+			&emsp;
+			<input type="date" id="idNascimento" name="nascimento" required="required">
+			&emsp;
+			<input type="radio" name="gender" value="macho" checked> M
 			<input type="radio" name="gender" value="femea"> F<br>
-			Email:<br>
-			<input type="text" id="idEmail" name="email"><br>
-			Senha:<br>
-			<input type="password" id="idPassword" name="password"><br>
-			Repetir senha:<br>
-			<input type="password" id="idRepeatPassword" name="repeatPassword"><br><br>
-			<input type="button" onclick="cadastro()" value="Cadastrar">
+
+			RG:
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+			CPF:<br>
+			<input type="text" id="idRG" name="RG" required="required">
+			&emsp;
+			<input type="text" id="idCPF" name="cpf" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" oninvalid="return cpf_incorreto(this);" placeholder="xxx.xxx.xxx-xx" required="required"><br>
+
+			Clube:
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+			Categoria:<br>
+			<input type="text" id="idClube" name="clube" required="required">
+			&emsp;
+			<input type="text" id="idCategoria" list="categorias" name="categoria" required="required">
+			<datalist id="categorias">
+			<option label="" value="Mirim">
+			<option label="" value="Adulto">
+			</datalist><br>
+
+			Nome da Mae:<br>
+			<input type="text" id="idNomeMae" name="nomemae" required="required" size="50"><br>
+
+
+			<br>
+			<input type="submit" onclick="cadastro()" value="Cadastrar">
 		</form>
-		
+
 	</body>
 </html>
