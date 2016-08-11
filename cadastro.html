@@ -14,10 +14,130 @@
   		firebase.initializeApp(config);
 		</script>
 
+		<style type="text/css">
+			.global-div{width:900px; height:auto; padding:0 15px 15px 15px; position:relative; float:none; left:50%;  margin:5px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+
+			h1{font:italic bold 4em Georgia, "Times New Roman", Times, serif; text-align:center; margin: -5px -20px -20px -20px; background:#111; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
+
+
+			#idTabelaLogin{
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+			#IdTabelaCadastro{
+				margin: 0 auto;
+				height: 200px;
+				width: 400px;
+				border: solid 10px black;
+			}
+		</style>
+
 	</head>
 	<body>
 		<script src="cadastro.js"></script>
-		<form>
+
+		<div class="global-div">
+
+            <h1>Cadastro</h1>
+        </div>
+
+		<table id="IdTabelaLogin">
+			<thead>
+				
+				<td>
+					<b>login:</b>
+					<input type="text" id="IdLoginClube">
+				</td>
+				<td>
+					<b>senha:</b>
+					<input type="password" id="IdSenhaClube">
+				</td>
+				<td>
+					<input type="button" value="Login" onclick="login()" id="IdButtonLogin">
+				</td>
+			</thead>
+		</table>
+		<br>
+		
+
+		<table id="IdTabelaCadastro">
+			<thead>
+				
+			</thead>
+			<tbody>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr>
+					<td>
+						nome:
+						<input type="text" id="IdNome">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						apelido:
+						<input type="text" id="IdApelido">
+					</td>
+					<td>
+						nascimento:
+						<input type="text" id="IdNascimento" OnKeyPress="formatar('##/##/####', this)">
+					</td>
+					<td>
+						sexo:
+						<select id="IdSexo">
+							<option>Masculino</option>
+							<option>Feminino</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						RG:
+						<input type="text" id="IdRG">
+					</td>
+					<td>
+						cpf:
+						<input type="text" id="IdCpf" OnKeyPress="formatar('###.###.###-##', this)">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						clube:
+						<input type="text" id="IdClube">
+					</td>
+					<td>
+						categoria:
+						<select id="IdCategoria">
+							<option value="pre-mirim">Pre Mirim</option>
+  							<option value="mirim">Mirim</option>
+  							<option value="infantil">Infantil</option>
+  							<option value="cadete">Cadete</option>
+  							<option value="juvenil">Juvenil</option>
+  							<option value="junior">Junior</option>
+  							<option value="adulto">Adulto</option>
+  							<option value="master">Master</option>
+  						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						nome da mae:
+						<input type="text" id="IdNomeMae">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" onclick="cadastro()" value="Cadastrar">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<!--form>
 			Nome:<br>
 			<input type="text" id="idNome" name="nome" required="required" size="50"><br>
 
@@ -62,7 +182,7 @@
 
 			<br>
 			<input type="submit" onclick="cadastro()" value="Cadastrar">
-		</form>
+		</form-->
 
 	</body>
 </html>
