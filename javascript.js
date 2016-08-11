@@ -20,7 +20,7 @@ $(function(){
 		$(this).parent().addClass('ativo');
 		var ancora = $(this).attr('href');
 		var nome = ancora.substr(1, ancora.length);
-		if(nome == 'aba2'){
+		if(nome == 'aba2' || nome == 'aba1'){
 			exibirClubes();
 		}
 		noticia = $('#conteudo div[id="' + nome + '"]').html();
@@ -113,6 +113,7 @@ function deslogar(){
 
 function exibirClubes(){
 	var doc = document.getElementById("IdListaClubes");
+	var doc2 = document.getElementById("IdFiltrarClube");
 	var str = '';
 	var lista = [];
 	var i = 0;
@@ -125,6 +126,7 @@ function exibirClubes(){
   			str = geraString(str, lista[i-1]);
 		});
   		doc.innerHTML = str;
+  		doc2.innerHTML = str;
 	});
     
 }

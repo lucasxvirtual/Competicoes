@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            Criando Abas
+            Gerenciador
         </title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" type="text/css" href="estilo.css" />
@@ -55,17 +55,17 @@
             <h1>Gerenciamento</h1>
 
             <ul class="abas">
-                <li><a href="#noticia1">Ver Atletas</a></li>
-                <li><a href="#noticia2">Cadastrar Clube</a></li>
-                <li><a href="#noticia3">Sorteio</a></li>
-                <li><a href="#noticia4">Login</a></li>
+                <li><a href="#aba1">Ver Atletas</a></li>
+                <li><a href="#aba2">Cadastrar Clube</a></li>
+                <li><a href="#aba3">Sorteio</a></li>
+                <li><a href="#aba4">Login</a></li>
             </ul>
 
-            <div id="noticia"></div>
+            <div id="aba"></div>
 
             <div id="conteudo">
 
-                <div id="noticia1">
+                <div id="aba1">
                     <table id="IdTabelaAtletas">
                         <thead>
                             <td><p>clube</p></td>
@@ -82,12 +82,20 @@
                                 </td>
                                 <td>
                                     <select id="IdFiltrarCategoria">
-                                        
+                                        <option value="pre-mirim">Pre Mirim</option>
+                                        <option value="mirim">Mirim</option>
+                                        <option value="infantil">Infantil</option>
+                                        <option value="cadete">Cadete</option>
+                                        <option value="juvenil">Juvenil</option>
+                                        <option value="junior">Junior</option>
+                                        <option value="adulto">Adulto</option>
+                                        <option value="master">Master</option>
                                     </select>
                                 </td>
                                 <td>
                                     <select id="IdFiltrarGenero">
-                                        
+                                        <option>Masculino</option>
+                                        <option>Feminino</option>
                                     </select>
                                 </td>
                             </tr>
@@ -100,7 +108,7 @@
                     
                 </div>
 
-                <div id="noticia2">
+                <div id="aba2">
                     <form>
                         clube:<br>
                         <input type="text" name="clube" id="IdClube"><br>
@@ -115,12 +123,12 @@
 
                 </div>
 
-                <div id="noticia3">
+                <div id="aba3">
                     <h2>Título</h2>
                     <p>info</p>
                 </div>
 
-                <div id="noticia4">
+                <div id="aba4">
                     <form>
                         email:<br>
                         <input type="email" name="email" id="IdEmail"></form>
