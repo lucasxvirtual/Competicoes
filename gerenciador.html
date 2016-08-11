@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Criando Abas
+        </title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="estilo.css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="javascript.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB5qwbwzraoRgkXx0IV4NWI3oR-4GGJbow",
+            authDomain: "competicoes-94b6e.firebaseapp.com",
+            databaseURL: "https://competicoes-94b6e.firebaseio.com",
+            storageBucket: "competicoes-94b6e.appspot.com",
+        };
+        firebase.initializeApp(config);
+        </script>
+
+        <style type="text/css">
+            #IdListaClubes{
+                width: 200px;
+                height: 300px;
+            }
+            #IdFiltrarClube{
+                width: 200px;
+            }
+            #IdFiltrarCategoria{
+                width: 200px;
+            }
+            #IdFiltrarGenero{
+                width: 200px;
+            }
+            #IdTabelaAtletas{
+                margin: 0 auto;
+                width: 500px;
+                height: 10px;
+            }
+            #IdExibirAtletas{
+                margin-left: 0;
+                margin-right: 0;
+                width: 880px;
+                height: 300px;
+            }
+        </style>
+
+    </head>
+    <body onload="exibirClubes();">
+    
+        <div class="global-div">
+
+            <h1>Gerenciamento</h1>
+
+            <ul class="abas">
+                <li><a href="#noticia1">Ver Atletas</a></li>
+                <li><a href="#noticia2">Cadastrar Clube</a></li>
+                <li><a href="#noticia3">Sorteio</a></li>
+                <li><a href="#noticia4">Login</a></li>
+            </ul>
+
+            <div id="noticia"></div>
+
+            <div id="conteudo">
+
+                <div id="noticia1">
+                    <table id="IdTabelaAtletas">
+                        <thead>
+                            <td><p>clube</p></td>
+                            <td><p>categoria</p></td>
+                            <td><p>genero</p></td>
+                            <td><input type="button" id="IdPesquisar", value="pesquisar"></td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select id="IdFiltrarClube">
+                                        
+                                    </select>    
+                                </td>
+                                <td>
+                                    <select id="IdFiltrarCategoria">
+                                        
+                                    </select>
+                                </td>
+                                <td>
+                                    <select id="IdFiltrarGenero">
+                                        
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <select size="50" id="IdExibirAtletas">
+                        
+                    </select>
+
+                    
+                </div>
+
+                <div id="noticia2">
+                    <form>
+                        clube:<br>
+                        <input type="text" name="clube" id="IdClube"><br>
+                        senha:<br>
+                        <input type="text" name="senha" id="IdSenhaClube"><br><br>
+                        <input type="button" name="cadastrar" value="cadastrar" onclick="cadastrarClube()">
+                    </form><br><br>
+                    <select size="20" id="IdListaClubes"></select><br><br>
+                    <input type="checkbox" id="IdExcluirClubeAtletas">
+                    Excluir clube e atletas cadastrados (sem esta opcao, os atletas ja cadastrados pelo clube permanecerao).<br><br>
+                    <input type="button", value="excluir clube" onclick="excluirClube();">
+
+                </div>
+
+                <div id="noticia3">
+                    <h2>Título</h2>
+                    <p>info</p>
+                </div>
+
+                <div id="noticia4">
+                    <form>
+                        email:<br>
+                        <input type="email" name="email" id="IdEmail"></form>
+                        senha:<br>
+                        <input type="password" name="senha" id="IdSenha"><br><br>
+                        <input type="button" name="entrar" value="entrar" onclick="logar()" id="IdEntrar">
+                        <input type="button" value="sair" onclick="deslogar()">
+                    </form>
+                    <script>
+                        var user = firebase.auth().currentUser;
+                        if (user != null) {
+                            document.getElementById("IdEmail").disabled = true;
+                            document.getElementById("IdSenha").disabled = true;
+                            document.getElementById("IdEntrar").disabled = true;
+                        }
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
