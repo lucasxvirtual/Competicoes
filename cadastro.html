@@ -1,7 +1,19 @@
 <html>
 	<head>
 		<title>Cadastro</title>
-		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+		<script>
+  		// Initialize Firebase
+  		var config = {
+    		apiKey: "AIzaSyB5qwbwzraoRgkXx0IV4NWI3oR-4GGJbow",
+    		authDomain: "competicoes-94b6e.firebaseapp.com",
+    		databaseURL: "https://competicoes-94b6e.firebaseio.com",
+    		storageBucket: "competicoes-94b6e.appspot.com",
+  		};
+  		firebase.initializeApp(config);
+		</script>
+
 	</head>
 	<body>
 		<script src="cadastro.js"></script>
@@ -16,7 +28,7 @@
 			Sexo:<br>
 			<input type="text" id="idApelido" name="apelido" required="required">
 			&emsp;
-			<input type="date" id="idNascimento" name="nascimento" required="required">
+			<input type="text" id="idNascimento" name="nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="xx/xx/xxxx" OnKeyPress="formatar('##/##/####', this)" required="required">
 			&emsp;
 			<input type="radio" name="gender" value="macho" checked> M
 			<input type="radio" name="gender" value="femea"> F<br>
@@ -26,7 +38,7 @@
 			CPF:<br>
 			<input type="text" id="idRG" name="RG" required="required">
 			&emsp;
-			<input type="text" id="idCPF" name="cpf" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" oninvalid="return cpf_incorreto(this);" placeholder="xxx.xxx.xxx-xx" required="required"><br>
+			<input type="text" id="idCPF" name="cpf" pattern="[0-9]{3}(\.)[0-9]{3}(\.)[0-9]{3}-[0-9]{2}" OnKeyPress="formatar('###.###.###-##', this)" placeholder="xxx.xxx.xxx-xx" required="required"><br>
 
 			Clube:
 			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -34,16 +46,15 @@
 			<input type="text" id="idClube" name="clube" required="required">
 			&emsp;
 			<select name="categoria" id="idCategoria">
-  				<option value="volvo">Pre Mirim</option>
-  				<option value="saab">Mirim</option>
-  				<option value="opel">Infantil</option>
-  				<option value="audi">Cadete</option>
-  				<option value="audi">Juvenil</option>
-  				<option value="audi">Junir</option>
-  				<option value="audi">Adulto</option>
-  				<option value="audi">Master</option>
+  				<option value="pre-mirim">Pre Mirim</option>
+  				<option value="mirim">Mirim</option>
+  				<option value="infantil">Infantil</option>
+  				<option value="cadete">Cadete</option>
+  				<option value="juvenil">Juvenil</option>
+  				<option value="junior">Junior</option>
+  				<option value="adulto">Adulto</option>
+  				<option value="master">Master</option>
 			</select><br>
-
 
 			Nome da Mae:<br>
 			<input type="text" id="idNomeMae" name="nomemae" required="required" size="50"><br>

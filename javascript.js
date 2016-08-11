@@ -14,18 +14,18 @@ $(function(){
 		noticia = $('#conteudo div:first-child').html();			
 		$('.abas li:first-child').addClass('ativo');		
 	}
-	$('#noticia').append('<div>' + noticia + '</div>').find('div').slideDown();
+	$('#aba').append('<div>' + noticia + '</div>').find('div').slideDown();
 	$('.abas li a').click(function(){
 		$('.abas li').removeClass('ativo');
 		$(this).parent().addClass('ativo');
 		var ancora = $(this).attr('href');
 		var nome = ancora.substr(1, ancora.length);
-		if(nome == 'noticia2'){
+		if(nome == 'aba2'){
 			exibirClubes();
 		}
 		noticia = $('#conteudo div[id="' + nome + '"]').html();
-		$('#noticia').empty();
-		$('#noticia').append('<div>' + noticia + '</div>').find('div').slideDown();
+		$('#aba').empty();
+		$('#aba').append('<div>' + noticia + '</div>').find('div').slideDown();
 		return false();
 
 	})
